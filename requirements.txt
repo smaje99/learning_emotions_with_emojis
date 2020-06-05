@@ -23,6 +23,7 @@ ipdb==0.13.2
 ipython==7.15.0
 ipython-genutils==0.2.0
 jedi==0.17.0
+joblib==0.15.1
 Keras-Preprocessing==1.1.2
 kiwisolver==1.2.0
 Markdown==3.2.2
@@ -51,6 +52,7 @@ pytz==2020.1
 requests==2.23.0
 requests-oauthlib==1.3.0
 rsa==4.0
+scikit-learn==0.23.1
 scipy==1.4.1
 seaborn==0.10.1
 sentencepiece==0.1.91
@@ -63,6 +65,7 @@ tensorflow==2.2.0
 tensorflow-estimator==2.2.0
 termcolor==1.1.0
 thinc==7.4.0
+threadpoolctl==2.1.0
 torch==1.5.0
 torchtext==0.6.0
 torchvision==0.6.0
