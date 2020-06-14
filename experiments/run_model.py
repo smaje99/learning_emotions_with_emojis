@@ -1,8 +1,3 @@
-'''
-Emotion classification with a Logistic classifier
-@author: Omar U. Florez
-'''
-
 import argparse
 import os
 import numpy as np
@@ -160,5 +155,5 @@ def run_average_precision():
 
 if __name__ == '__main__':
     run(args, model_name='mlp')
-    run(args, model_name='logistic')
-    run(args, model_name='lstm')
+    # run(args, model_name='logistic')
+    # run(args, model_name='lstm')
