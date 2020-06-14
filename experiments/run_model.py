@@ -8,6 +8,7 @@ sys.path.append(os.getcwd())
 
 #deep learning framework
 import tensorflow as tf
+import tensorflow.compat.v1 as tfv1
 
 #data
 from data.EmojiDatasetWords import EmojiDatasetWords
@@ -79,7 +80,7 @@ def run(args, model_name='lstm', report_results=True, training_steps=2000):
     model_class = get_model(model_name)
     model = model_class(max_seq_len, state_size, vocab_size, dataset.get_number_classes())
 
-    tf.reset_default_graph()
+    tfv1.reset_default_graph()
     model.build_model()
     loss, optimizer = model.step_training(learning_rate=learning_rate)
     val_precision = 0.0
