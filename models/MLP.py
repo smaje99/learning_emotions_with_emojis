@@ -58,7 +58,7 @@ class MLP:
         self.precision = tf.reduce_mean(tf.cast(self.correct_preds, tf.float32))
 
     def step_training(self, learning_rate=0.01):
-        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(
+        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(
             logits=self.logits, 
             labels=self.y_one_hot
         ))

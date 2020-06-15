@@ -81,16 +81,17 @@ def run(args, model_name='lstm', report_results=True, training_steps=2000):
     model = model_class(max_seq_len, state_size, vocab_size, dataset.get_number_classes())
 
     tfv1.reset_default_graph()
+    tfv1.disable_eager_execution()
     model.build_model()
     loss, optimizer = model.step_training(learning_rate=learning_rate)
     val_precision = 0.0
-    with tf.Session() as sess:
-        sess.run(tf.global_variables_initializer())
-        saver = tf.train.Saver(max_to_keep=1)
+    with tfv1.Session() as sess:
+        sess.run(tfv1.global_variables_initializer())
+        saver = tfv1.train.Saver(max_to_keep=1)
 
         ckpt = None
         if args.save_model_path:
-            ckpt = tf.train.get_checkpoint_state(args.save_model_path)
+            ckpt = tfv1.train.get_checkpoint_state(args.save_model_path)
         if ckpt and ckpt.model_checkpoint_path and restore_model:
             saver.restore(sess, ckpt.model_checkpoint_path)
 
